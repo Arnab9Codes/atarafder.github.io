@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arnab Kanti Tarafder</title>
+<meta name="description" content="Arnab Kanti Tarafder, Ph.D. candidate in Computer Science at William &amp; Mary, working on systems for distributed LLM and Mixture-of-Experts training.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* Shared styles for every page of the site */
+:root {
+  --ink: #1f2933;
+  --soft: #5c6b7a;
+  --link: #1772d0;
+  --hover: #f09228;
+  --rule: #e4e8ec;
+  --highlight: #fff8e1;
+  --panel: #fbfcfd;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font: 400 15.5px/1.6 "Lato", "Helvetica Neue", Arial, sans-serif;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--hover); }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 2px; }
+img { max-width: 100%; }
+
+.page { max-width: 820px; margin: 0 auto; padding: 48px 24px 64px; }
+
+/* Intro */
+.intro { max-width: 720px; margin: 0 auto; }
+h1 { font-size: 2rem; font-weight: 400; margin: 0 0 14px; }
+.intro h1 { text-align: center; }
+.intro p { margin: 0 0 12px; }
+.contact { text-align: center; margin-top: 16px; }
+.contact a { white-space: nowrap; }
+.sep { color: var(--soft); margin: 0 8px; }
+
+h2 { font-size: 1.35rem; font-weight: 400; margin: 48px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); scroll-margin-top: 16px; }
+
+/* News */
+.news { list-style: none; padding: 0; margin: 0; }
+.news li { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 12px; padding: 4px 0; }
+.when { color: var(--soft); font-weight: 700; }
+
+/* Publications */
+.pub { padding: 14px 12px; margin: 0 -12px; border-radius: 6px; }
+.pub.featured { background: var(--highlight); }
+.pub .title { font-weight: 700; font-size: 1.05rem; }
+.pub .authors, .pub .venue { margin: 2px 0; }
+.pub .venue { font-style: italic; }
+.plinks { margin: 4px 0 6px; }
+.plinks a + a::before { content: "/"; color: var(--soft); margin: 0 8px; }
+.pub p.desc { margin: 4px 0 0; }
+.me { font-weight: 700; }
+
+/* Simple dated lists: talks, writing, experience, education */
+.rows { margin: 0; padding: 0; list-style: none; }
+.rows li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; padding: 6px 0; }
+.rows .dates { color: var(--soft); white-space: nowrap; }
+.rows .detail { display: block; color: var(--soft); }
+
+footer { margin-top: 56px; text-align: center; color: var(--soft); font-size: 0.85rem; }
+
+@media (max-width: 680px) {
+  .intro { grid-template-columns: 1fr; }
+  .intro   .highlight, .pub { grid-template-columns: 1fr; gap: 12px; }
+  .rows li, .news li { grid-template-columns: 1fr; gap: 0; }
+}
+
+/* Research explainers */
+.explainer { margin: 0 0 40px; }
+.explainer h3 { font-size: 1.15rem; font-weight: 700; margin: 0 0 4px; }
+.explainer .sub { color: var(--soft); margin: 0 0 16px; }
+.explainer h4 { font-size: 1rem; font-weight: 700; margin: 18px 0 6px; }
+.explainer p { margin: 0 0 10px; }
+.explainer ul { margin: 0 0 10px; padding-left: 20px; }
+.explainer li { margin: 0 0 4px; }
+.diagram { margin: 14px 0 6px; border: 1px solid var(--rule); border-radius: 6px; padding: 14px; background: var(--panel); }
+.diagram svg { width: 100%; height: auto; display: block; }
+.diagram figcaption { font-size: 0.88rem; color: var(--soft); margin-top: 8px; }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="intro">
+    <div>
+      <h1>Arnab Kanti Tarafder</h1>
+      <p>I'm a Ph.D. candidate in Computer Science at <a href="https://www.wm.edu/as/computerscience/">William &amp; Mary</a>, advised by Dr. Jie Ren.</p>
+      <p>I build systems for large-scale model training. My research develops new parallelism techniques that reduce the memory and communication cost of distributed Mixture-of-Experts (MoE) training and inference on heterogeneous GPU/CPU clusters. I also collaborate remotely with the <a href="https://www.bsc.es/">Barcelona Supercomputing Center</a>.</p>
+      <p>Earlier, I worked on graph neural network training systems, including half-precision training with custom CUDA kernels.</p>
+      <p class="contact">
+        <a href="mailto:aktarafder@wm.edu">Email</a><span class="sep">/</span>
+        <a href="cv.pdf">CV</a><span class="sep">/</span>
+        <a href="https://scholar.google.com/citations?user=eUhpVgQAAAAJ">Google Scholar</a><span class="sep">/</span>
+        <a href="https://www.linkedin.com/in/arnab-tarafder/">LinkedIn</a>
+      </p>
+    </div>
+  </div>
+
+  <h2 id="news">News</h2>
+  <ul class="news">
+    <li><span class="when">Oct 2026</span><span>Preprint of RelayMoE, memory-efficient expert routing for distributed MoE training, is <a href="https://arxiv.org/abs/2610.07333">on arXiv</a>.</span></li>
+    <li><span class="when">Sep 2025</span><span>Started a remote research collaboration with the Barcelona Supercomputing Center.</span></li>
+    <li><span class="when">Jul 2025</span><span>Presented HalfGNN at HPDC 2025 in Notre Dame, IN (<a href="https://hpdc.sci.utah.edu/2025/assets/slides/main_session/tarafder.pdf">slides</a>).</span></li>
+    <li><span class="when">2025</span><span>Papers at <a href="https://dl.acm.org/doi/abs/10.1145/3731545.3731575">HPDC 2025</a> and <a href="https://www.usenix.org/system/files/atc25-gong.pdf">USENIX ATC 2025</a>.</span></li>
+    <li><span class="when">Jan 2025</span><span>Passed my Ph.D. candidacy exam.</span></li>
+  </ul>
+
+  <h2 id="research">Research</h2>
+
+  <div class="explainer" id="relaymoe">
+    <h3>RelayMoE: training MoE models without the all-to-all memory spike</h3>
+    <p class="sub">Memory-Efficient Expert Routing for Distributed MoE Training, under review, 2026 (<a href="https://arxiv.org/abs/2610.07333">arXiv</a>)</p>
+
+    <h4>Where the memory goes</h4>
+    <p>In a Mixture-of-Experts model, each token is sent to its top-<i>k</i> experts, and those experts usually live on different GPUs. The standard way to move tokens is an all-to-all exchange: every GPU packs the tokens bound for every other GPU, sends them, and receives everything it needs at once.</p>
+    <p>That means each GPU materializes the full top-<i>k</i>-expanded token buffer in one go. As models use more experts, larger <i>k</i> and longer sequences, this buffer, not attention, becomes the peak of memory use. It caps how long a sequence you can train and how large a batch fits on a fixed set of GPUs.</p>
+
+    <h4>Passing the work around a ring</h4>
+    <p>RelayMoE replaces the one-shot exchange with a ring. GPUs are arranged in a ring, and at each step every GPU computes on what it currently holds, then passes it to its neighbour. No GPU ever needs the full dispatch buffer, only one slice at a time.</p>
+    <ul>
+      <li><b>Adaptive routing.</b> Either the tokens or the expert weights can travel. RelayMoE picks whichever moves fewer bytes for the layer at hand.</li>
+      <li><b>Overlap.</b> Sending the next slice runs while the current slice is being computed, so the ring hides most of its communication.</li>
+      <li><b>Cheaper backward pass.</b> The same ring structure supports memory-efficient recomputation during backpropagation.</li>
+    </ul>
+    <p>On 8B to 57B MoE models, this gives up to 2.02× throughput and 2.85× longer trainable sequences than Megatron-LM, DeepEP, Tutel and FasterMoE. This work is in collaboration with the Barcelona Supercomputing Center.</p>
+  </div>
+  <div class="explainer" id="halfgnn">
+    <h3>HalfGNN: making half precision work for graph neural networks</h3>
+    <p class="sub">Optimization of GNN Training Through Half-precision, HPDC 2025 (<a href="https://dl.acm.org/doi/abs/10.1145/3731545.3731575">paper</a>, <a href="https://arxiv.org/abs/2411.01109">arXiv</a>)</p>
+
+    <h4>Why half precision broke GNN training</h4>
+    <p>Half precision (FP16) should make training faster and use less memory. For GNNs, existing systems got the opposite: their sparse kernels (SpMM and SDDMM) ran no faster, or slower, than in FP32, and models such as GCN and GIN trained to abnormally low accuracy.</p>
+    <p>Two causes stood out. GNN aggregation sums the features of many neighbours, and for high-degree nodes that running sum overflows FP16's range before it is ever normalized. And naive mixed-precision setups kept converting tensors between FP16 and FP32 and falling back to FP32 kernels, which threw away the speed benefit.</p>
+
+    <h4>Discretized reduction and half-precision vector types</h4>
+    <ul>
+      <li><b>Discretized reduction.</b> Instead of summing all of a node's neighbours and scaling at the end, the kernels reduce a fixed-size batch of products, scale it, and repeat. Values stay in range, so overflow can't happen, and the fixed batches also balance work across threads.</li>
+      <li><b>Vector types.</b> New half2, half4 and half8 operations load, store and reduce several FP16 values at once, so the kernels use the GPU's memory bandwidth properly.</li>
+      <li><b>FP16 end to end.</b> Every kernel in the backend runs in half precision, with non-atomic writes through a staging buffer, so there is no constant conversion back to FP32.</li>
+    </ul>
+    <p>Together, these give an average 2.3× faster training than float-based DGL for GCN, GIN and GAT, with 2.67× less memory and the same accuracy.</p>
+  </div>
+
+  <h2 id="publications">Publications</h2>
+  <div class="pub featured">
+    <div>
+      <a class="title" href="https://arxiv.org/abs/2610.07333">Memory-Efficient Expert Routing for Distributed MoE Training</a>
+      <div class="authors"><span class="me">Arnab Kanti Tarafder</span>, Jaume Guasch-Martí, Gokcen Kestor, Jie Ren</div>
+      <div class="venue">Under review, 2026</div>
+      <div class="plinks"><a href="https://arxiv.org/abs/2610.07333">arXiv</a><a href="#relaymoe">how it works</a></div>
+      <p class="desc">RelayMoE adaptively circulates tokens or experts around a ring of GPUs instead of using all-to-all dispatch, giving up to 2.02× throughput and 2.85× longer trainable sequences than Megatron-LM, DeepEP, Tutel and FasterMoE.</p>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div>
+      <a class="title" href="https://dl.acm.org/doi/abs/10.1145/3731545.3731575">Optimization of GNN Training Through Half-precision</a>
+      <div class="authors"><span class="me">Arnab Kanti Tarafder</span>, Yidong Gong, Pradeep Kumar</div>
+      <div class="venue">HPDC 2025</div>
+      <div class="plinks"><a href="https://dl.acm.org/doi/abs/10.1145/3731545.3731575">paper</a><a href="https://arxiv.org/abs/2411.01109">arXiv</a><a href="#halfgnn">how it works</a></div>
+      <p class="desc">Half-precision GNN training with custom CUDA kernels: a 2.3× speedup and 2.67× memory savings over the state of the art, with no loss of accuracy.</p>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div>
+      <a class="title" href="https://www.usenix.org/system/files/atc25-gong.pdf">Identifying and Analyzing Pitfalls in GNN Systems</a>
+      <div class="authors">Yidong Gong, <span class="me">Arnab Kanti Tarafder</span>, Saima Afrin, Pradeep Kumar</div>
+      <div class="venue">USENIX ATC 2025</div>
+      <div class="plinks"><a href="https://www.usenix.org/system/files/atc25-gong.pdf">paper</a></div>
+      <p class="desc">An analysis of the system-design pitfalls that cause poor training performance in state-of-the-art GNN systems.</p>
+    </div>
+  </div>
+
+  <h2 id="experience">Experience</h2>
+  <ul class="rows">
+    <li><span>Research collaboration (remote), Barcelona Supercomputing Center<span class="detail">Memory-efficient distributed MoE training</span></span><span class="dates">Sep 2025 – present</span></li>
+    <li><span>Graduate Research Assistant, William &amp; Mary<span class="detail">Parallelism for LLM/MoE training and inference, with Dr. Jie Ren</span></span><span class="dates">Jun 2024 – present</span></li>
+    <li><span>Graduate Researcher, William &amp; Mary<span class="detail">Half-precision GNN training, with Dr. Pradeep Kumar</span></span><span class="dates">Jan 2023 – May 2024</span></li>
+    <li><span>Graduate Teaching Assistant, William &amp; Mary<span class="detail">Computer Organization &amp; Architecture; Software Development</span></span><span class="dates">Jan 2023 – May 2024</span></li>
+  </ul>
+
+  <h2 id="education">Education</h2>
+  <ul class="rows">
+    <li><span>Ph.D. in Computer Science, William &amp; Mary<span class="detail">Summer Research Fellowship, 2023 and 2024</span></span><span class="dates">2023 – present</span></li>
+    <li><span>B.Sc. in Computer Science &amp; Engineering, RUET, Bangladesh</span><span class="dates">2015 – 2019</span></li>
+  </ul>
+
+  <footer>Last updated November 2026</footer>
+</div>
+</body>
+</html>
